@@ -1,10 +1,14 @@
-const mongoose = require('mongoose') // Exportando a função mongoose
+const { Sequelize } = require('sequelize');
 
-async function main() {
-    await mongoose.connect('mongodb://localhost:27017/getmanut') 
-    console.log('Conectou ao Mongoose!')
-} // Conexão com o banco noslq
+const sequelize = new Sequelize(
+  process.env.DB_NAME,
+  process.env.DB_USER,
+  process.env.DB_PASSWORD,
+  {
+    host: process.env.DB_HOST,
+    dialect: 'postgres',
+    port: process.env.DB_PORT,
+  },
+);
 
-main().catch((err) => console.log(err)) // erro 
-
-module.exports = mongoose 
+module.exports = sequelize;
