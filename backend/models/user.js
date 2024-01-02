@@ -1,5 +1,7 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../db/conn');
+//models
+const Office = require('./office');
 
 const User = sequelize.define('User', {
   name: {
@@ -17,6 +19,11 @@ const User = sequelize.define('User', {
     require: true,
   },
 
+  cargo: {
+    type: DataTypes.INTEGER,
+    require: true,
+  },
+
   isAdmin: {
     type: DataTypes.BOOLEAN,
     require: true,
@@ -26,5 +33,9 @@ const User = sequelize.define('User', {
     type: DataTypes.BOOLEAN,
   }
 });
+
+
+Office.hasMany(User);
+User.belongsTo(Office);
 
 module.exports = User;

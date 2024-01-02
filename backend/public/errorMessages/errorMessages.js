@@ -2,6 +2,9 @@ const errorMessages = {
   name: 'O nome é obrigatório',
   email: 'O email é obrigatório',
   password: 'A senha é obrigatória',
+  cargo: 'Obrigatório passar o cargo!',
+  valorHora: 'Obrigatório passar o Valor hora!',
+  isAdmin: 'Obrigatório passar se o cargo pode ter acesso total ao sistema!',
   invalidePassword: 'Senha inválida!',
   requiredNameAnd: 'Nome e email são obrigatórios',
   confirmPassword: 'A confirmação de senha é obrigatória',
@@ -16,6 +19,9 @@ const errorMessages = {
   checkRemove: 'Por favor, verifique o nome a ser removido!',
   userUpdate: 'Usuário atualizado com sucesso!',
   userRemove: 'Usuário removido com sucesso!',
+  officeConcluir: 'Cadastro concluído com sucesso!',
+  officeExistente: 'Já está cadastrado o cargo',
 };
+
 
 module.exports = errorMessages;
