@@ -1,5 +1,6 @@
 const router = require('express').Router();
 
+const OfficeController = require('../controllers/OfficeController');
 const UserController = require('../controllers/UserController');
 
 // middleware
@@ -18,6 +19,9 @@ router.patch('/deactivation', verifyToken, UserController.deactivation);
 
 // Users 
 router.post('/register', UserController.registerUsers);
+
+//Office
+router.post('/createOffice', verifyToken, OfficeController.createOffice);
 
 
 
